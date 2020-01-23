@@ -22,7 +22,7 @@ export default class Post extends Component {
     handleSubmitComment = (event) => {
         event.preventDefault()
 
-        fetch(`http://localhost:3000/comments`, {
+        fetch(`https://afternoon-ravine-21932.herokuapp.com/comments`, {
           method:'POST',
           headers: { 
             'content-type': 'application/json',

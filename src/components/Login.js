@@ -55,7 +55,7 @@ export default class Login extends Component {
     
       logInSubmitted = (event) => {
         event.preventDefault()
-        fetch("http://localhost:3000/login", {
+        fetch("https://afternoon-ravine-21932.herokuapp.com/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export default class Login extends Component {
       }
 
       componentDidMount(){
-        fetch(`http://localhost:3000/users`)
+        fetch(`https://afternoon-ravine-21932.herokuapp.com/users`)
         .then(r => r.json())
         .then(userArray => {
             this.setState({
@@ -85,7 +85,7 @@ export default class Login extends Component {
         event.preventDefault()
         swal("Success", "Sign up complete", "success")
       
-        fetch(`http://localhost:3000/users`, {
+        fetch(`https://afternoon-ravine-21932.herokuapp.com/users`, {
           method:'POST',
           headers: { 
             "Accept": "application/json",

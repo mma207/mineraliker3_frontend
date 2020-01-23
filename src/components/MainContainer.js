@@ -27,7 +27,7 @@ export default class MainContainer extends Component {
 
     getPosts = () => {
             const { loggedInUserId, token } = this.props
-            fetch("http://localhost:3000/posts", {
+            fetch("https://afternoon-ravine-21932.herokuapp.com/posts", {
               headers: {
                 "Authorization": token
               }
@@ -38,7 +38,7 @@ export default class MainContainer extends Component {
               }))
         
             if (loggedInUserId) {
-              fetch(`http://localhost:3000/users/${loggedInUserId}`, {
+              fetch(`https://afternoon-ravine-21932.herokuapp.com/users/${loggedInUserId}`, {
                 headers: {
                   "Authorization": token
                 }
@@ -90,7 +90,7 @@ export default class MainContainer extends Component {
                   this.setState({
                       img: url
                   })
-                  fetch(`http://localhost:3000/posts`, {
+                  fetch(`https://afternoon-ravine-21932.herokuapp.com/posts`, {
                       method:'POST',
                       headers: { 
                           'content-type': 'application/json',
@@ -133,7 +133,7 @@ export default class MainContainer extends Component {
                 icon: "success",
               })
 
-        fetch(`http://localhost:3000/posts/${post.id}`, {
+        fetch(`https://afternoon-ravine-21932.herokuapp.com/posts/${post.id}`, {
           method:'DELETE'
         })
           .then(r => r.json())
@@ -157,7 +157,7 @@ export default class MainContainer extends Component {
  
     handleLike = (post) => {
       let postLikes = post.likes + 1
-        fetch(`http://localhost:3000/posts/${post.id}`, {
+        fetch(`https://afternoon-ravine-21932.herokuapp.com/posts/${post.id}`, {
           method:'PATCH',
           headers: { 
             'content-type': 'application/json',

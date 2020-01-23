@@ -8,7 +8,7 @@ class NewConversationForm extends React.Component {
   };
 
   componentDidMount(){
-    fetch(`http://localhost:3000/users`)
+    fetch(`https://afternoon-ravine-21932.herokuapp.com/users`)
     .then(r => r.json())
     .then(userArray => {
         this.setState({
